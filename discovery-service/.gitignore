@@ -36,6 +36,10 @@ hs_err_pid*
 #InjtelliJ
 .idea/
 .idea/*
+*.iml
+
+.mvn/
+.mvn/*
 
 .attach*
 

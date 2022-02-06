@@ -23,7 +23,7 @@ public class FinanceServiceImpl implements FinanceService {
     @Override
     public QuoteDetailsResponse fetchDetail(String symbol, ExchangeEnum exchange) {
         try {
-            var exchangeSymbol = symbol + (ExchangeEnum.NSE.equals(exchange) ? ".NS" : "");
+            var exchangeSymbol = symbol.toUpperCase() + (ExchangeEnum.NSE.equals(exchange) ? ".NS" : "");
             Stock stock = YahooFinance.get(exchangeSymbol);
             log.info("Data fetched: {} - {}", stock.getName(), stock.getQuote().getPrice());
 
