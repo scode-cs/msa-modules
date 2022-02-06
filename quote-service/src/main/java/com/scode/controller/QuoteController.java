@@ -1,5 +1,6 @@
 package com.scode.controller;
 
+import com.scode.constant.ExchangeEnum;
 import com.scode.model.QuoteDetailsResponse;
 import com.scode.service.FinanceService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,7 +19,8 @@ public class QuoteController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/v1/fetch", produces = MediaType.APPLICATION_JSON_VALUE)
-    public QuoteDetailsResponse fetchDetail(@RequestParam("symbol") String symbol) {
-        return financeService.fetchDetail(symbol);
+    public QuoteDetailsResponse fetchDetail(@RequestParam("symbol") String symbol,
+                                            @RequestParam("exchange") ExchangeEnum exchange) {
+        return financeService.fetchDetail(symbol + (ExchangeEnum.NSE.equals(exchange) ? ".NS" : ""));
     }
 }
