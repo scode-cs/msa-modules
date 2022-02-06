@@ -1,9 +1,9 @@
 server:
-  port: 9092
+  port: 9083
 
 spring:
   application:
-    name: stock-service
+    name: portfolio-service
   zipkin:
     base-url: http://localhost:9411/
     discovery-client-enabled: true
@@ -22,20 +22,5 @@ springdoc:
     enabled: true
     path: /swagger-ui.html
   show-actuator: true
-
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 180000
-        readTimeout: 180000
-        loggerLevel: BASIC
-
-stock-config:
-  api-communication:
-    quote-service:
-      ## Host Details Captured from Eureka-Server
-      host: quote-service
-      quote-detail-api: /quotes/v1/fetch
 
 
