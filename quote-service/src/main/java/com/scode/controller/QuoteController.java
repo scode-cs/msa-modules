@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/quotes")
 @RequiredArgsConstructor
-@Tag(name = "Quote-Details API")
+@Tag(name = "Quote-Details")
 public class QuoteController {
 
     private final FinanceService financeService;
