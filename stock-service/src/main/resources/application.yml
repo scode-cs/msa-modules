@@ -31,7 +31,8 @@ feign:
 stock-config:
   api-communication:
     quote-service:
-      host: http://localhost:9081
+      ## Host Details Captured from Eureka-Server
+      host: quote-service
       quote-detail-api: /quotes/v1/fetch
 
 

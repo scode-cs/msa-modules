@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
-@FeignClient(name = "quoteService", url = "${stock-config.api-communication.quote-service.host}")
+@FeignClient("${stock-config.api-communication.quote-service.host}")
 public interface QuoteServiceClient {
 
     @GetMapping(value = "${stock-config.api-communication.quote-service.quote-detail-api}")
