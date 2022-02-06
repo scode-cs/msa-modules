@@ -40,4 +40,3 @@ hs_err_pid*
 .attach*
 
 *.dylib
-.DS_Store
