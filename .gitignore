@@ -33,12 +33,25 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-#InjtelliJ
+### IntelliJ IDEA ###
+.idea
 .idea/
 .idea/*
 *.iml
+*.iws
+*.ipr
+
+### STS ###
+.apt_generated
+.settings
+.springBeans
+.sts4-cache
+
+
+.mvn
+.mvn/
+.mvn/*
 
 .attach*
 
 *.dylib
-.DS_Store
