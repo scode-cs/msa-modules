@@ -1,0 +1,36 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  zipkin:
+    base-url: http://localhost:9411/
+    discovery-client-enabled: true
+
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          uri: https://github.com/scode-cs/msa-modules.git
+          skip-ssl-validation: true
+#          username: ${git_username}
+#          password: ${git_password}
+          search-paths:
+            - configurations
+            - identity-service-config
+            - user-service-config
+            - stock-service-config
+            - quote-service-config
+            - portfolio-service-config
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
