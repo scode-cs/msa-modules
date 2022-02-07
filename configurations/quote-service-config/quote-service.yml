@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: quote-service
+  zipkin:
+    base-url: http://localhost:9411/
+    discovery-client-enabled: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  show-actuator: true
