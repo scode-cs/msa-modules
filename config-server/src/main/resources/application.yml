@@ -18,7 +18,11 @@ spring:
 #          username: ${git_username}
 #          password: ${git_password}
           search-paths:
+            - configurations/identity-service-config
+            - configurations/user-service-config
             - configurations/stock-service-config
+            - configurations/quote-service-config
+            - configurations/portfolio-service-config
 
 
 eureka:
