@@ -84,6 +84,12 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<excludeDevtools>false</excludeDevtools>
+					<layers>
+						<enabled>true</enabled>
+						<includeLayerTools>true</includeLayerTools>
+					</layers>
+					<imageName>santanucst/scode:latest</imageName>
 				</configuration>
 			</plugin>
 		</plugins>
