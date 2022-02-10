@@ -10,15 +10,14 @@ import java.time.ZonedDateTime;
 public class QuoteDetailsMapper {
 
     public QuoteDetailsResponse map(Stock stock) {
-        return QuoteDetailsResponse.builder().valid(stock.isValid()).symbol(stock.getSymbol()).name(stock.getName())
-                .currency(stock.getCurrency()).price(stock.getQuote().getPrice())
-                .timeZone(stock.getQuote().getTimeZone()).fetchedAt(ZonedDateTime.now())
-                .exchange(stock.getStockExchange())
-                .details(QuoteDetailsResponse.Details.builder()
-                        .open(stock.getQuote().getOpen()).dayLow(stock.getQuote().getYearLow())
-                        .dayHigh(stock.getQuote().getDayHigh()).previousClose(stock.getQuote().getPreviousClose())
-                        .volume(stock.getQuote().getVolume()).avgVolume(stock.getQuote().getAvgVolume())
-                        .change(stock.getQuote().getChange()).changePercent(stock.getQuote().getChangeInPercent()).build())
-                .build();
+        return new QuoteDetailsResponse(stock.isValid(), stock.getName(), stock.getSymbol(),
+                stock.getQuote().getPrice(), stock.getCurrency(),
+                stock.getQuote().getTimeZone(), ZonedDateTime.now(),
+                stock.getStockExchange(),
+                new QuoteDetailsResponse.Details(
+                        stock.getQuote().getOpen(), stock.getQuote().getDayLow(),
+                        stock.getQuote().getDayHigh(), stock.getQuote().getPreviousClose(),
+                        stock.getQuote().getVolume(), stock.getQuote().getAvgVolume(),
+                        stock.getQuote().getChange(), stock.getQuote().getChangeInPercent()));
     }
 }
