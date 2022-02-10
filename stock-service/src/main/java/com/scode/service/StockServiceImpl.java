@@ -17,7 +17,6 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public StockDetailsResponse fetch(String symbol, ExchangeEnum exchange) {
-//        var exSymbol = symbol + (ExchangeEnum.NSE.equals(exchange) ? ".NS" : "");
         return quoteServiceCommunication.fetch(symbol, exchange)
                 .orElseThrow(RuntimeException::new);
     }
